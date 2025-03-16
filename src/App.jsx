@@ -4,6 +4,11 @@ import FeaturedNews from "./components/FeaturedNews"
 import HeroSection from "./components/HeroSection"
 import Navbar from "./components/Navbar"
 
+
+import Posts from "./components/Posts"
+import { Route, Router, Routes } from "react-router-dom"
+import PostFilter from "./components/PostFilter"
+
 function App() {
 
   return (
@@ -22,9 +27,10 @@ function App() {
 
      {/*--------------------*/}
 
-
-
-
+    <Routes>
+      <Route path="/" element={<Posts />} />
+      <Route path="/category/:category" element={<Posts />} />
+    </Routes>
 
   </div>
   )
