@@ -1,12 +1,52 @@
-# React + Vite
+# [Live Link](https://kollege-apply-assignment.vercel.app/)   🛜
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Objective:
 
-Currently, two official plugins are available:
+Develop a mobile-responsive web application using Next.js App Router (preferred) or
+React.js. The application must implement real-time search functionality, tab filtration, and
+adhere to the provided Figma design.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Technical Specifications
+```bash
+React.js
+TailwindCSS
+```
 
-## Expanding the ESLint configuration
+## Dependencies
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project requires the following dependencies:
+
+- **React** (e.g., `react`, `react-dom`, `react-router-dom`)
+- **Tailwind CSS** (for stylish)
+- **React Toastify** (for notifications)
+- **React Router** (for navigation)
+
+### Clone Repo
+
+To clone this repo , run:
+```sh
+git clone https://github.com/nmnnrb/KollegeApply_Assignment
+```
+
+
+### Installation
+
+To install all dependencies, run:
+
+```sh
+npm install
+# or
+yarn install
+```
+
+
+### start the application
+run:
+
+```sh
+npm run dev
+# or
+yarn dev
+```
+
+
