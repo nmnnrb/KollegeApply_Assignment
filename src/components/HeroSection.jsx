@@ -54,8 +54,8 @@ const HeroSection = () => {
     <div className="px-4 md:px-0">
         <ToastContainer />
             {/* Trending Now */}
-    <div className="trending bg-[#F2EFFF] mb-10 flex flex-col md:flex-row justify-between border-[0.1px] border-violet-500 py-2 px-4 rounded-lg mt-12">
-            <p className='text-sm font-semibold cursor-pointer text-[#262628]'> ⚡️<span className='font-bold cursor-pointer text-[#090909] text-sm'>Trending Now:  </span>{trendData.articles[0].title}</p>
+    <div onClick={() => navigate(`/post/trend`)} className="trending bg-[#F2EFFF] mb-10 flex flex-col md:flex-row justify-between border-[0.1px] border-violet-500 py-2 px-4 rounded-lg mt-12">
+            <p onClick={() => navigate(`/post/trend`)} className='text-sm font-semibold cursor-pointer text-[#262628]'> ⚡️<span className='font-bold cursor-pointer text-[#090909] text-sm'>Trending Now:  </span>{trendData.articles[0].title}</p>
             <p onClick={() => navigate(`/post/trend`)}  className='text-sm font-extrabold flex cursor-pointer text-[#262628]'>Check Now  <MoveRight className="w-5 mt-[1px] hover:translate-x-2 transition duration-300 cursor-pointer font-extrabold justify-center text-center h-5" /></p>
     </div>
             {/* ------------------------------------------ */}
