@@ -1,4 +1,5 @@
 import BigStory from "./components/BigStory"
+import FeaturedNews from "./components/FeaturedNews"
 import HeroSection from "./components/HeroSection"
 import Navbar from "./components/Navbar"
 
@@ -14,7 +15,9 @@ function App() {
       <HeroSection />
       <BigStory />
       </div>
+      <FeaturedNews />
       </div>
+
      {/*--------------------*/}
 
 
