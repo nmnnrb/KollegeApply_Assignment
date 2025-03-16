@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import PostFilter from './PostFilter'
 import posts from '../assets/data'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+
 const Posts = () => {
     const allPost = posts.articles;
     const { category } = useParams();
     const [filteredPosts, setFilteredPosts] = useState(allPost);
+    const navigate = useNavigate();
+
+    const handleCategoryChange = (category) => {
+        if (category && category !== "All News") {
+            setFilteredPosts(allPost.filter(post => post.category === category));
+        } else {
+            setFilteredPosts(allPost);
+        }
+    };
 
     useEffect(() => {
         if (category && category !== "All News") {
@@ -18,14 +28,18 @@ const Posts = () => {
   return (
     <div className='bg-[#F5F3FF] border border-[#E5DFFF]'>
       <div className="justify-center items-center flex w-full h-[110px]">
-      <PostFilter />
+      <PostFilter onCategoryChange={handleCategoryChange} />
       </div>
 
 
     <div className="flex flex-wrap justify-center items-center gap-4 p-4">
         {
-            filteredPosts.map((post) => (
-                <div key={post.id} className=" cursor-pointer overflow-hidden relative w-[300px] h-[400px] bg-white rounded-lg shadow-xl">
+            filteredPosts.map((post,index) => (
+                <div 
+                    key={index} 
+                    className=" cursor-pointer overflow-hidden relative w-[300px] h-[400px] bg-white rounded-lg shadow-xl"
+                    onClick={() => navigate(`/post/${index}`)}
+                >
                     <img src={post.image} alt={post.title} className="w-full hover:scale-110 transition-all h-[200px] object-cover rounded-t-lg"/>
                     <div className="p-4">
                         <h1 className="text-md font-semibold text-black">{post.title}</h1>

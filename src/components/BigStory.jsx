@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import newsData from "../assets/data"
-const BigStory = () => {
+const BigStory = ({Categ= "All News"}) => {
 
     const categories = [
         {name: "All News" },
@@ -11,8 +11,8 @@ const BigStory = () => {
         { name: "Latest News" }
     ]
 
-    const [selectedCategory, setSelectedCategory] = useState("All News");
-
+    const [selectedCategory, setSelectedCategory] = useState(Categ);
+    const navigate = useNavigate();
     const filterData = selectedCategory === "All News" ? newsData.articles : newsData.articles.filter((article) => article.category === selectedCategory);
 
   return (
@@ -21,7 +21,7 @@ const BigStory = () => {
         <div className=" flex gap-2 text-black text-sm  rounded-lg mt-12">
             {
                 categories.map((cat) => (
-                    <NavLink to={`/bigstory/${cat.name}`}  onClick={() => setSelectedCategory(cat.name)}  className={`px-[5px]  py-1 rounded-md mx-[1px] transition duration-200 
+                    <NavLink to={`/`}  onClick={() => setSelectedCategory(cat.name)}  className={`px-[5px]  py-1 rounded-md mx-[1px] transition duration-200 
                         ${selectedCategory === cat.name ? ' bg-[#f3f3f3]' : 'bg-white'}`}>
                         {cat.name}
                     </NavLink>
@@ -41,12 +41,12 @@ const BigStory = () => {
 
         {/* dynamic post show  */}
             {
-                filterData.slice(0,5).map((data,index)=>{
+                filterData.slice(0,4).map((data,index)=>{
                     return(
                         <div className="flex flex-col">
 
   
-                        <div key={index} className="flex overflow-hidden gap-4">
+                        <div key={index} onClick={() => navigate(`/post/${index}`)} className="flex overflow-hidden cursor-pointer gap-4">
                             <div className="w-[150px] h-[50px] relative">
                                 <img src={data.image} alt="" className="min-w-[150px] hover:scale-125 transition duration-300 min-h-[50px] max-h-[90px] object-fit "/>
                             </div>
@@ -55,7 +55,7 @@ const BigStory = () => {
                                 <p className='text-[#40347D] text-sm'>{
                                 data.description.split(" ").length >10 ?  data.description.split(" ").slice(0, 6).join(" ") + "..." : data.description
                                     }</p>
-                                <p className='text-[#40347D] text-xs'> {new Date(data.publishedAt).toLocaleString()}</p>
+                                <p className='text-[#40347D] text-xs'>{new Date(data.publishedAt).toLocaleDateString()}</p>
                             </div>
                            
                         </div>
