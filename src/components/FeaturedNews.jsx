@@ -7,10 +7,7 @@ const FeaturedNews = () => {
   const [index, setIndex] = useState(0);
 
   const nextPost = () => {
-    setIndex(prevIndex => {
-      const newIndex = prevIndex < posts.length - 4? prevIndex + 4 : 0;
-      setIndex(newIndex);
-    });
+    setIndex(prevIndex =>  prevIndex < posts.length - 4 ? prevIndex + 4 : 0);
   }
   return (
    <div className="flex mt-12 mb-12 border border-[#f2e08a] flex-col p-4 gap-4">

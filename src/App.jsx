@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify"
 import BigStory from "./components/BigStory"
 import FeaturedNews from "./components/FeaturedNews"
 import HeroSection from "./components/HeroSection"
@@ -7,6 +8,7 @@ function App() {
 
   return (
   <div >
+    <ToastContainer />
     <Navbar/>
      
      {/* hero and big story  */}
