@@ -1,13 +1,13 @@
 import { ChevronLeft, ChevronRight, MoveRight } from 'lucide-react'
 import React, { useState } from 'react'
 import newsData from "../assets/data"
+import trendData from "../assets/Trending"
 import { toast, ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 const HeroSection = () => {
-
+    // const trendData = useState(trendData[0]);
     const [index,setIndex] = useState(0);
     const [post, setPost] = useState(newsData.articles[0]);
-
     const increment = () => {
       if(index === newsData.articles.length - 1){
         toast.error("Can't go back further", {
@@ -55,8 +55,8 @@ const HeroSection = () => {
         <ToastContainer />
             {/* Trending Now */}
     <div className="trending bg-[#F2EFFF]  mb-10 flex justify-between  border-[0.1px] border-violet-500 min-w-[700px] py-2 px-4 rounded-lg mt-12">
-            <p className='text-sm font-semibold text-[#262628]'> ⚡️<span className='font-bold text-[#090909] text-sm'>Trending Now:  </span>CBSE Class 12 Physics Question Paper 2024 Set3</p>
-            <p className='text-sm font-extrabold  flex text-[#262628]'>Check Now  <MoveRight className="w-5 mt-[1px] hover:translate-x-2 transition duration-300 cursor-pointer font-extrabold justify-center text-center h-5" /></p>
+            <p className='text-sm font-semibold cursor-pointer text-[#262628]'> ⚡️<span className='font-bold cursor-pointer text-[#090909] text-sm'>Trending Now:  </span>{trendData.articles[0].title}</p>
+            <p onClick={() => navigate(`/post/trend`)}  className='text-sm font-extrabold  flex cursor-pointer text-[#262628]'>Check Now  <MoveRight className="w-5 mt-[1px] hover:translate-x-2 transition duration-300 cursor-pointer font-extrabold justify-center text-center h-5" /></p>
     </div>
             {/* ------------------------------------------ */}
            

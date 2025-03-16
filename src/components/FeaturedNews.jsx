@@ -1,11 +1,12 @@
 import { ChevronRight } from 'lucide-react'
 import React, { useState } from 'react'
 import data from '../assets/data'
+import { useNavigate } from 'react-router-dom';
 const FeaturedNews = () => {
 
   const posts = data.articles;
   const [index, setIndex] = useState(0);
-
+  const navigate = useNavigate();
   const nextPost = () => {
     setIndex(prevIndex =>  prevIndex < posts.length - 4 ? prevIndex + 4 : 0);
   }
@@ -24,11 +25,11 @@ const FeaturedNews = () => {
 <div className="flex justify-between">
 {
   posts.slice(index,index+4).map((post, index) => (
-    <div key={index} className='flex gap-3'>
+    <div key={index} onClick={() => navigate(`/post/${index}`)} className='flex cursor-pointer gap-3'>
 
       <div className='w-[250px]'> {/* Adjust width for alignment */}
-        <h1 className='text-md font-semibold line-clamp-2 '>{post.title}</h1>
-        <p className='text-sm mt-1 line-clamp-4'> 
+        <h1 className='text-md font-semibold hover:text-[#8d713d] transition duration-300 line-clamp-2 '>{post.title}</h1>
+        <p className='text-sm mt-1 hover:text-gray-400 transition duration-75 line-clamp-4'> 
           {post.description.split(" ").length > 10 
             ? post.description.split(" ").slice(0, 11).join(" ") + "..." 
             : post.description}

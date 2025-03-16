@@ -7,6 +7,7 @@ import FullPost from "./components/FullPost"
 import Posts from "./components/Posts"
 import { Route, Router, Routes } from "react-router-dom"
 import PostFilter from "./components/PostFilter"
+import TrendPost from "./components/TrendPost"
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
     <Route path="/category/:category" element={<Posts />} /> 
 
     <Route path="/post/:id" element={<FullPost />} />
+    <Route path="/post/trend" element={<TrendPost />} />
     </Routes>
 
  </>
