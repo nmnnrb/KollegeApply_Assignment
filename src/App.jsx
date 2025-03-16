@@ -1,10 +1,26 @@
+import BigStory from "./components/BigStory"
+import HeroSection from "./components/HeroSection"
 import Navbar from "./components/Navbar"
 
 function App() {
 
   return (
-  <div>
+  <div >
     <Navbar/>
+     
+     {/* hero and big story  */}
+     <div className="w-[calc(100%-8rem)] m-auto">
+     <div className="flex justify-between items-start">
+      <HeroSection />
+      <BigStory />
+      </div>
+      </div>
+     {/*--------------------*/}
+
+
+
+
+
   </div>
   )
 }
