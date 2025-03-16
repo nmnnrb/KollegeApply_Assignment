@@ -40,13 +40,13 @@ const Right = ({post}) => {
                         <div className="flex flex-col">
 
   
-                        <div key={index}  onClick={() => navigate(`/post/${index}`)} className="flex overflow-hidden cursor-pointer  gap-4">
-                            <div className="w-[150px] h-[50px] relative">
-                                <img src={data.image} alt="" className="min-w-[150px] hover:scale-125 transition duration-300 min-h-[50px] max-h-[90px] object-fit "/>
+                        <div key={index}  onClick={() => navigate(`/post/${index}`)} className="flex flex-col sm:flex-row overflow-hidden cursor-pointer gap-4">
+                            <div className="w-full sm:w-[150px] h-[50px] relative">
+                                <img src={data.image} alt="" className="w-full sm:min-w-[150px] hover:scale-125 transition duration-300 h-[50px] sm:max-h-[90px] object-cover"/>
                             </div>
                             <div className="flex flex-col gap-1">
                                 <p className='text-[#40347D] font-semibold text-md'>{data.title}</p>
-                                <p className='text-[#40347D]  text-sm'>{
+                                <p className='text-[#40347D] text-sm'>{
                                 data.description.split(" ").length >10 ?  data.description.split(" ").slice(0, 6).join(" ") + "... " : data.description
                                     }</p>
                               <div className="flex justify-between items-center">

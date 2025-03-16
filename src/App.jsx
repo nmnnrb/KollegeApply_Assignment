@@ -12,15 +12,15 @@ import TrendPost from "./components/TrendPost"
 function App() {
 
   return (
-<>
+<div className="overflow-x-hidden">
     <ToastContainer />
     <Navbar/>
     <Routes>
      {/* hero and big story  */}
      <Route path="/" element={
       <>
-      <div className="w-[calc(100%-8rem)] m-auto">
-     <div className="flex justify-between items-start">
+      <div className="w-full md:w-[calc(100%-8rem)] m-auto px-4 md:px-0">
+     <div className="flex flex-col md:flex-row justify-between items-start">
       <HeroSection />
       <BigStory />
       </div>
@@ -32,15 +32,12 @@ function App() {
 
      {/*--------------------*/}
 
-
-
     <Route path="/category/:category" element={<Posts />} /> 
-
     <Route path="/post/:id" element={<FullPost />} />
     <Route path="/post/trend" element={<TrendPost />} />
     </Routes>
 
- </>
+ </div>
   );
 }
 

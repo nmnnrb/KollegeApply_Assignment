@@ -22,12 +22,12 @@ const FeaturedNews = () => {
 
     {/* post map */}
 
-<div className="flex justify-between">
+<div className="flex flex-col md:flex-row justify-between gap-4">
 {
   posts.slice(index,index+4).map((post, index) => (
     <div key={index} onClick={() => navigate(`/post/${index}`)} className='flex cursor-pointer gap-3'>
 
-      <div className='w-[250px]'> {/* Adjust width for alignment */}
+      <div className='w-full md:w-[250px]'> {/* Adjust width for alignment */}
         <h1 className='text-md font-semibold hover:text-[#8d713d] transition duration-300 line-clamp-2 '>{post.title}</h1>
         <p className='text-sm mt-1 hover:text-gray-400 transition duration-75 line-clamp-4'> 
           {post.description.split(" ").length > 10 

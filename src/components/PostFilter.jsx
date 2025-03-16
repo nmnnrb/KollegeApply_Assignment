@@ -16,14 +16,14 @@ const PostFilter = ({ onCategoryChange }) => {
     }
 
     return (
-        <div className='bg-white py- relative px-6 rounded-lg shadow-xl flex justify-between items-center'>
-            <div className=" flex gap-2 text-black text-sm transition duration-300 rounded-lg ">
+        <div className='bg-white py-2 px-2 md:px-6 rounded-lg shadow-xl flex flex-col md:flex-row justify-between items-center'>
+            <div className="flex gap-1 md:gap-2 text-black text-xs md:text-sm transition duration-300 rounded-lg overflow-x-auto">
                 {
                     categories.map((cat) => (
                         <button 
                             key={cat.name}
                             onClick={() => handleCategoryChange(cat.name)}  
-                            className={`px-6 flex cursor-pointer flex-col relative py-3 rounded-md mx-[1px] transition duration-300 
+                            className={`px-2 md:px-6 flex cursor-pointer flex-col relative py-1 md:py-3 rounded-md mx-[1px] transition duration-300 
                                 ${selectedCategory === cat.name ? ' text-[#40347D] font-extrabold' : 'bg-white'}`}
                         >
                             {cat.name} 
