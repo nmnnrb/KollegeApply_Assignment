@@ -16,13 +16,13 @@ const BigStory = () => {
     const filterData = selectedCategory === "All News" ? newsData.articles : newsData.articles.filter((article) => article.category === selectedCategory);
 
   return (
-    <div className='flex w-[550px] flex-col gap-4'>
+    <div className='flex w-[500px] flex-col gap-4'>
         {/* big story Navbar */}
         <div className=" flex gap-2 text-black text-sm  rounded-lg mt-12">
             {
                 categories.map((cat) => (
-                    <NavLink to={`/bigstory/${cat.name}`}  onClick={() => setSelectedCategory(cat.name)}  className={({ isActive }) =>
-                        `px-[5px] py-1 rounded-md mx-[1px] transition duration-300 ${selectedCategory === cat.name? 'text-bold' : ''}  ${isActive ? "bg-[#f3f3f3]" : "bg-white"}`}>
+                    <NavLink to={`/bigstory/${cat.name}`}  onClick={() => setSelectedCategory(cat.name)}  className={`px-[5px]  py-1 rounded-md mx-[1px] transition duration-200 
+                        ${selectedCategory === cat.name ? ' bg-[#f3f3f3]' : 'bg-white'}`}>
                         {cat.name}
                     </NavLink>
                 ))
@@ -33,7 +33,7 @@ const BigStory = () => {
 
 
         {/* big story posts */}
-        <div className="bigPosts flex flex-col gap-2 bg-[#FFFFFF]  p-4 rounded-lg">
+        <div className="bigPosts flex flex-col gap-2 bg-[#FFFFFF] mt-8  p-4 rounded-lg">
 
 
         <p className=' text-[#40347D] italic font-semibold text-3xl'>THE BIG STORIES  <span className='text-sm absolute '>✨</span></p>
@@ -41,7 +41,7 @@ const BigStory = () => {
 
         {/* dynamic post show  */}
             {
-                filterData.slice(0,4).map((data,index)=>{
+                filterData.slice(0,5).map((data,index)=>{
                     return(
                         <div className="flex flex-col">
 
@@ -55,7 +55,7 @@ const BigStory = () => {
                                 <p className='text-[#40347D] text-sm'>{
                                 data.description.split(" ").length >10 ?  data.description.split(" ").slice(0, 6).join(" ") + "..." : data.description
                                     }</p>
-                                <p className='text-[#40347D] text-xs'>{data.publishedAt}</p>
+                                <p className='text-[#40347D] text-xs'> {new Date(data.publishedAt).toLocaleString()}</p>
                             </div>
                            
                         </div>
