@@ -46,7 +46,7 @@ const Navbar = () => {
     <div className='bg-white w-full  md:h-18 shadow-md flex flex-col md:flex-row items-center justify-between px-4'>
       <div onClick={() =>{ navigate(`/`)
         window.scrollTo({top:0, behavior: 'smooth'})
-      }} className="logo flex items-center justify-center px-12 w-full mt-4 md:mt-0 md:w-auto">
+      }} className="logo flex cursor-pointer items-center justify-center px-12 w-full mt-4 md:mt-0 md:w-auto">
         <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS823MOL703U-srtNlgy8ZkIrhtiqyDbFpbjA&s' className='h-10' alt='logo'/>
         <p className='font-bold text-[#40347D] text-2xl md:text-3xl'> KollegeApply</p>
       </div>

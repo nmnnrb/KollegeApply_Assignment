@@ -48,7 +48,7 @@ const Posts = () => {
                         <p className="text-sm line-clamp-3 text-[#40347D]">{post.description}  </p>
                         <p className='text-xs font-bold font-mono mt-3'>{new Date(post.publishedAt).toLocaleString()}</p>
                     </div>
-                    <p className='absolute right-2 bottom-0 underline italic text-sm text-blue-500 font-bold cursor-pointer'> Read More</p>
+                    <p className='absolute hover:scale-95 drop-shadow-2xl backdrop-blur-lg bg-black/3 px-2 py-[0.5px] rounded transition duration-300 right-2 bottom-0 underline italic text-sm text-blue-500 font-bold cursor-pointer'> Read More</p>
                 </div>
             ))
         }

@@ -31,11 +31,11 @@ const BigStory = ({Categ= "All News"}) => {
             }
         </div>
         {/* big story posts */}
-        <div className="bigPosts flex flex-col gap-2 bg-[#FFFFFF] mt-8 p-4 rounded-lg">
+        <div className="bigPosts flex flex-col gap- shadow-lg bg-[#FFFFFF] mt-8 p-4 rounded-lg">
             <p className='text-[#40347D] italic font-semibold text-2xl md:text-3xl'>THE BIG STORIES  <span className='text-sm absolute '>✨</span></p>
             {/* dynamic post show  */}
             {
-                filterData.slice(0,4).map((data,index)=>{
+                filterData.slice(0,6).map((data,index)=>{
                     return(
                         <div className="flex flex-col">
                             <div key={index} onClick={() =>{ navigate(`/post/${index}`)

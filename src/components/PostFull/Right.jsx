@@ -10,7 +10,7 @@ const Right = ({post}) => {
         console.log("clicked" , selectedCategory);
     }
 
-    const filterData = newsData.articles.filter((article) => article.category === selectedCategory);
+    const filterData = newsData.articles.map((it, index) => ({...it , newIndex: index})).filter((article) => article.category === selectedCategory);
 
   return (
     <div className='flex flex-col gap-4 items-start justify-start'> 
@@ -40,11 +40,11 @@ const Right = ({post}) => {
                         <div className="flex flex-col">
 
   
-                        <div key={index}  onClick={() =>{ navigate(`/post/${index}`)
+                        <div key={index}  onClick={() =>{ navigate(`/post/${data.newIndex}`)
                             window.scrollTo({top:0, behavior: 'smooth'})
                         }} className="flex flex-col sm:flex-row overflow-hidden cursor-pointer gap-4">
                             <div className="w-full sm:w-[150px] h-[50px] relative">
-                                <img src={data.image} alt="" className="w-full sm:min-w-[150px] hover:scale-125 transition duration-300 h-[50px] sm:max-h-[90px] object-cover"/>
+                                <img src={data.image} alt="" className="w-full sm:min-w-[150px] hover:scale-125 transition duration-300 h-[50px] md:mt-4 md:h-[500px] sm:max-h-[90px] object-cover"/>
                             </div>
                             <div className="flex flex-col gap-1">
                                 <p className='text-[#40347D] font-semibold text-md'>{data.title}</p>
