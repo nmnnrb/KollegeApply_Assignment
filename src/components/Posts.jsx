@@ -38,7 +38,9 @@ const Posts = () => {
                 <div 
                     key={index} 
                     className=" cursor-pointer overflow-hidden relative w-[300px] h-[400px] bg-white rounded-lg shadow-xl"
-                    onClick={() => navigate(`/post/${index}`)}
+                    onClick={() =>{ navigate(`/post/${index}`)
+                        window.scrollTo({top:0, behavior: 'smooth'})
+                    }}
                 >
                     <img src={post.image} alt={post.title} className="w-full hover:scale-110 transition-all h-[200px] object-cover rounded-t-lg"/>
                     <div className="p-4">

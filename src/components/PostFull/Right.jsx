@@ -40,7 +40,9 @@ const Right = ({post}) => {
                         <div className="flex flex-col">
 
   
-                        <div key={index}  onClick={() => navigate(`/post/${index}`)} className="flex flex-col sm:flex-row overflow-hidden cursor-pointer gap-4">
+                        <div key={index}  onClick={() =>{ navigate(`/post/${index}`)
+                            window.scrollTo({top:0, behavior: 'smooth'})
+                        }} className="flex flex-col sm:flex-row overflow-hidden cursor-pointer gap-4">
                             <div className="w-full sm:w-[150px] h-[50px] relative">
                                 <img src={data.image} alt="" className="w-full sm:min-w-[150px] hover:scale-125 transition duration-300 h-[50px] sm:max-h-[90px] object-cover"/>
                             </div>

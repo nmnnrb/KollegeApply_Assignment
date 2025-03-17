@@ -21,7 +21,9 @@ const BigStory = ({Categ= "All News"}) => {
         <div className="flex gap-2 text-black text-sm rounded-lg mt-12 ">
             {
                 categories.map((cat) => (
-                    <NavLink to={`/`}  onClick={() => setSelectedCategory(cat.name)}  className={`px-[5px] py-1 rounded-md mx-[1px] transition duration-200 
+                    <NavLink to={`/`}  onClick={() =>{ setSelectedCategory(cat.name)
+                        window.scrollTo({top:0, behavior: 'smooth'})
+                    }}  className={`px-[5px] py-1 rounded-md mx-[1px] transition duration-200 
                         ${selectedCategory === cat.name ? ' bg-[#f3f3f3]' : 'bg-white'}`}>
                         {cat.name}
                     </NavLink>
@@ -36,7 +38,9 @@ const BigStory = ({Categ= "All News"}) => {
                 filterData.slice(0,4).map((data,index)=>{
                     return(
                         <div className="flex flex-col">
-                            <div key={index} onClick={() => navigate(`/post/${index}`)} className="flex overflow-hidden cursor-pointer gap-4">
+                            <div key={index} onClick={() =>{ navigate(`/post/${index}`)
+                                window.scrollTo({top:0, behavior: 'smooth'})
+                            }} className="flex overflow-hidden cursor-pointer gap-4">
                                 <div className="w-[100px] md:w-[150px] h-[50px] relative">
                                     <img src={data.image} alt="" className="min-w-[100px] md:min-w-[150px] hover:scale-125 transition duration-300 min-h-[50px] max-h-[90px] object-fit "/>
                                 </div>

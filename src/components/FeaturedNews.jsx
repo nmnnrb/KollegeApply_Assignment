@@ -25,7 +25,9 @@ const FeaturedNews = () => {
 <div className="flex flex-col md:flex-row justify-between gap-4">
 {
   posts.slice(index,index+4).map((post, index) => (
-    <div key={index} onClick={() => navigate(`/post/${index}`)} className='flex cursor-pointer gap-3'>
+    <div key={index} onClick={() =>{ navigate(`/post/${index}`)
+      window.scrollTo({top:0, behavior: 'smooth'})
+    }} className='flex cursor-pointer gap-3'>
 
       <div className='w-full md:w-[250px]'> {/* Adjust width for alignment */}
         <h1 className='text-md font-semibold hover:text-[#8d713d] transition duration-300 line-clamp-2 '>{post.title}</h1>
